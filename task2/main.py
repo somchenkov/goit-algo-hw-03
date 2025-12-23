@@ -1,14 +1,8 @@
 import random
 
 def get_numbers_ticket(min, max, quantity):
-    """
-    numbers = []
-    while quantity != 0:
-        if min >= 1 and max <= 1000:
-            numbers.append(int(random.uniform(min, max)))
-        quantity -= 1
-    """
-    numbers = random.sample(range(min, max), quantity)
-    return sorted(numbers)
+    numbers = random.sample(range(min, max), quantity) # get the unique numbers in a range of min and max
+    return sorted(numbers) #sort numbers and return the value
 
-print(get_days_from_today("2021.10-09"))
+
+print(get_numbers_ticket(5, 99, 10))
