@@ -5,7 +5,11 @@ def normalize_phone(phone_number):
     pattern = r"[A-Za-z\s;,\-:!\.()\\]"
     replacement = ""
     formatted_phone = re.sub(pattern, replacement, phone_number) #find characters based on the pattern and remove it
-    formatted_phone = f"+38{formatted_phone[-10:]}" #get the last 10 digits of the numbers and add +38 to it
+    #check if the number missing area code or the + sign
+    if formatted_phone[0] == "3":
+        formatted_phone = "+" + formatted_phone
+    elif formatted_phone[0] == "0":
+        formatted_phone = "+38" + formatted_phone
     return formatted_phone
 
 
